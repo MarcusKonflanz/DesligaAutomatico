@@ -1,0 +1,10 @@
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\bin\Debug\DesligaAutomatico.exe.config
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\bin\Debug\DesligaAutomatico.exe
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\bin\Debug\DesligaAutomatico.pdb
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.csprojAssemblyReference.cache
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.FmrDesliga.resources
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.Properties.Resources.resources
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.csproj.GenerateResource.cache
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.csproj.CoreCompileInputs.cache
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.exe
+C:\Users\marcusk\Documents\estudos\DesligaAuto\DesligaAutomatico\DesligaAutomatico\obj\Debug\DesligaAutomatico.pdb
