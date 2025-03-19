@@ -36,7 +36,7 @@ namespace DesligaAutomatico
                 error++;
             }
 
-            if (time >= 0)
+            if (time >= 1)
             {
 
                 int timeMin = 0;
