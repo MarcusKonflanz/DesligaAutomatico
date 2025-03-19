@@ -36,63 +36,71 @@ namespace DesligaAutomatico
                 error++;
             }
 
-            int timeMin = 0;
-            timeMin = time * 60;
-
-            pbTimer.Minimum = 0;
-            pbTimer.Maximum = timeMin;
-            pbTimer.Value = 0;
-
-
-
-            while (currentTime != timeMin)
+            if (time >= 0)
             {
-                currentTime++;
-                Thread.Sleep(500);
-                string tempoRestante = Convert.ToString((timeMin - currentTime) / 60);
-                if (tempoRestante == "0")
-                    lblTempoRestante.Text = "o computador será desligado em: 00:" + Convert.ToString(timeMin - currentTime) + " segundos.";
-                else
-                    lblTempoRestante.Text = "o computador será desligado em: " + Convert.ToString(tempoRestante) + " minutos.";
 
-                pbTimer.Value = currentTime;
-                Application.DoEvents(); // Processa eventos da UI
+                int timeMin = 0;
+                timeMin = time * 60;
 
+                pbTimer.Minimum = 0;
+                pbTimer.Maximum = timeMin;
+                pbTimer.Value = 0;
+
+
+                while (currentTime != timeMin)
+                {
+                    currentTime++;
+                    Thread.Sleep(500);
+                    string tempoRestante = Convert.ToString((timeMin - currentTime) / 60);
+                    if (tempoRestante == "0")
+                        lblTempoRestante.Text = "o computador será desligado em: 00:" + Convert.ToString(timeMin - currentTime) + " segundos.";
+                    else
+                        lblTempoRestante.Text = "o computador será desligado em: " + Convert.ToString(tempoRestante) + " minutos.";
+
+                    pbTimer.Value = currentTime;
+                    Application.DoEvents(); // Processa eventos da UI
+
+                    if (cancelTimer > 0)
+                    {
+                        timeMin = 0;
+                        currentTime = 0;
+                        pbTimer.Value = 0;
+                    }
+                    Thread.Sleep(500);
+                }
+                lblTempoRestante.Visible = false;
                 if (cancelTimer > 0)
                 {
-                    timeMin = 0;
-                    currentTime = 0;
-                    pbTimer.Value = 0;
+                    cancelaTimer();
                 }
-                Thread.Sleep(500);
-            }
-            lblTempoRestante.Visible = false;
-            if (cancelTimer > 0)
-            {
-                btnAgendar.Visible = true;
-                btnAgendar.Enabled = true;
-                btnCancelar.Visible = false;
-                txtTime.Enabled = true;
+                else
+                {
+                    if (error == 0)
+                        Process.Start("shutdown", "/s /t 0");
+
+                    else
+                        cancelaTimer();
+
+                }
             }
             else
             {
-                if (error == 0)
-                {
-                    Process.Start("shutdown", "/s /t 0");
-                }
-                else
-                {
-                    btnAgendar.Visible = true;
-                    btnAgendar.Enabled = true;
-                    btnCancelar.Visible = false;
-                    txtTime.Enabled = true;
-                }
+                MessageBox.Show("Insira um número válido para o tempo.");
+                cancelaTimer();
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             cancelTimer++;
+        }
+
+        private void cancelaTimer()
+        {
+            btnAgendar.Visible = true;
+            btnAgendar.Enabled = true;
+            btnCancelar.Visible = false;
+            txtTime.Enabled = true;
         }
     }
 }
